@@ -7,6 +7,7 @@ app.secret_key = b'?w\x85Z\x08Q\xbdO\xb8\xa9\xb65Kj\xa9_'
 
 @app.route('/sessions/<string:key>', methods=['GET'])
 def show_session(key):
+    print()
 
     session["hello"] = session.get("hello") or "World"
     session["goodnight"] = session.get("goodnight") or "Moon"
@@ -21,7 +22,7 @@ def show_session(key):
             for cookie in request.cookies],
     }), 200)
 
-    response.set_cookie('mouse', 'Cookie')
+    response.set_cookie('ok_this_is_the_third_cookie', '3Cookies')
 
     return response
 
